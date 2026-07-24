@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazra Global | Premium Food Import & Export (Bangladesh to Canada)</title>
+    <style>
+        :root {
+            --primary: #064e3b; /* Deep Emerald Green */
+            --primary-light: #047857;
+            --accent: #d97706; /* Warm Amber / Spice Tone */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Nav */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(6, 78, 59, 0.88), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        /* Features / Value Prop */
+        .features {
+            max-width: 1200px;
+            margin: -3rem auto 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Products Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Trade Bridge / Info Section */
+        .trade-bridge {
+            background: #e2e8f0;
+            border-radius: 12px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .trade-bridge h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .trade-bridge, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">NAZRA <span>GLOBAL</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Our Products</a></li>
+                <li><a href="#trade">Import/Export</a></li>
+                <li><a href="#contact" class="btn-nav">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Connecting Authentic Bangladeshi Taste to Canadian Markets</h1>
+            <p>Nazra Global specializes in importing high-demand, premium-grade food products, spices, and agricultural goods directly from Bangladesh to Canada.</p>
+            <div class="cta-buttons">
+                <a href="#products" class="btn-primary">View Product Line</a>
+                <a href="#contact" class="btn-secondary">Request Wholesale Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <div class="features">
+        <div class="feature-card">
+            <h3>Direct Sourcing</h3>
+            <p>Sourced directly from verified producers and growers across Bangladesh to guarantee origin and taste.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Full Compliance</h3>
+            <p>100% CFIA (Canadian Food Inspection Agency) compliant with clear regulatory labeling and standards.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Reliable Logistics</h3>
+            <p>Seamless supply chain network ensuring timely ocean and air freight deliveries across North America.</p>
+        </div>
+    </div>
+
+    <!-- Products Catalog -->
+    <section class="section" id="products">
+        <div class="section-title">
+            <h2>Our Core Import Categories</h2>
+            <p style="color: var(--gray);">Premium food products curated for South Asian markets and commercial distribution.</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h3>Aromatic Rice</h3>
+                    <p>Authentic Chinigura, Kalijira, and premium Basmati rice varieties packaged for retail and commercial use.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h3>Pure Spices & Herbs</h3>
+                    <p>Turmeric, chili powder, coriander, cumin, and specialty spice blends ground from raw harvests.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h3>Tea & Snacks</h3>
+                    <p>Famous Sylhet black teas, traditional dry snacks, chanachur, and ethnic baked goods.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-info">
+                    <h3>Frozen Foods & Fish</h3>
+                    <p>Responsibly sourced Bangladeshi freshwater fish (Hilsa, Rohu, Pangas) and ready-to-cook items.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trade Bridge Section -->
+    <section class="section" id="trade">
+        <div class="trade-bridge">
+            <div>
+                <h3>Your Trusted Trade Partner</h3>
+                <p>At <strong>Nazra Global</strong>, we bridge the supply chain gap between producers in Bangladesh and commercial buyers in Canada. Whether you operate a grocery chain, restaurant network, or food distribution business, we handle bulk trade, customs clearance, and quality assurance seamlessly.</p>
+            </div>
+            <div>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><strong>Origin Country:</strong> Bangladesh (Dhaka / Chittagong)</li>
+                    <li><strong>Destination Port:</strong> Canada (Toronto / Vancouver / Montreal)</li>
+                    <li><strong>Services:</strong> Bulk Importing, Private Labeling, Wholesale Supply</li>
+                    <li><strong>Compliance:</strong> CFIA Standard Inspection & Certification</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p style="color: var(--gray);">Send us an inquiry for wholesale pricing, trade partnerships, or sample requests.</p>
+        </div>
+
+        <div class="contact-container">
+            <div>
+                <h3>Business Inquiries</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--gray);">Fill out the form to connect with our trade team directly at <strong>nazraglobal.com</strong>.</p>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong>Canada Office / Trade Desk:</strong>
+                    <p>Ontario, Canada</p>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <strong>Email Direct:</strong>
+                    <p>info@nazraglobal.com</p>
+                </div>
+                <div>
+                    <strong>Sourcing Operations:</strong>
+                    <p>Dhaka & Chittagong, Bangladesh</p>
+                </div>
+            </div>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name / Business Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g. Acme Food Market">
+                </div>
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="type">Inquiry Type</label>
+                    <select id="type" name="type">
+                        <option>Wholesale Ordering</option>
+                        <option>Customs & Sourcing Inquiry</option>
+                        <option>Supplier Partnership (BD)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Product Request</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Let us know what products or quantities you are looking for..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">NAZRA GLOBAL</h4>
+                <p style="color: var(--gray); font-size: 0.9rem;">Connecting authentic Bangladeshi food products with North American consumers and businesses through safe, certified global trade.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Quick Links</h4>
+                <p><a href="#about" style="color: var(--gray); text-decoration: none;">About Us</a></p>
+                <p><a href="#products" style="color: var(--gray); text-decoration: none;">Products</a></p>
+                <p><a href="#contact" style="color: var(--gray); text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Domain</h4>
+                <p style="color: var(--gray);">www.nazraglobal.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nazra Global. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
