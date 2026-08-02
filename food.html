@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAZRA | Food • Apparel • Distribution</title>
-    <!-- Google Fonts for Bold, Clean Modern Typography -->
+    <title>NAZRA | Food Catalogue</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS RESET & VARIABLES */
         * {
             margin: 0;
             padding: 0;
@@ -18,19 +16,12 @@
         }
 
         :root {
-            /* Matched exactly to the NAZRA LOGO.pdf color palette */
-            --bg-color: #F3F3ED; /* Subtle off-white/beige background */
+            --bg-color: #F3F3ED; 
             --card-bg: #FFFFFF;
-            --text-main: #232323; /* Deep charcoal for text */
+            --text-main: #232323; 
             --text-muted: #6B6B6B;
             --border-color: #E2E2D9;
-            --accent-hover: #000000;
-            
-            /* Integrated Brand Variables for Contact Section */
-            --brand-dark: #232323;
-            --brand-bg: #F3F3ED;
-            --brand-gold: #A69076; /* Subtle muted gold */
-            --border-light: #D6D6CF;
+            --brand-gold: #A69076; 
 
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -41,10 +32,8 @@
             color: var(--text-main);
             font-family: var(--font-body);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
-        /* NAVIGATION BAR */
         header {
             position: sticky;
             top: 0;
@@ -105,8 +94,8 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--text-muted);
+        nav a:hover, nav a.active {
+            color: var(--brand-gold);
         }
 
         .nav-tabs {
@@ -114,7 +103,6 @@
             justify-content: center;
             gap: 20px;
             padding: 30px 24px 10px;
-            background-color: var(--bg-color);
         }
 
         .nav-link {
@@ -127,15 +115,14 @@
             transition: border-color 0.3s ease;
         }
 
-        .nav-link:hover {
+        .nav-link.active {
             border-color: var(--text-main);
         }
 
-        /* SECTIONS & TYPOGRAPHY */
         .catalog-section {
-            padding: 60px 24px;
+            padding: 40px 24px 80px;
             max-width: 1200px;
-            margin: 0 auto 40px;
+            margin: 0 auto;
         }
 
         .main-category-title {
@@ -147,7 +134,6 @@
             margin-bottom: 40px;
             padding-bottom: 15px;
             border-bottom: 2px solid var(--border-color);
-            color: var(--text-main);
         }
 
         .sub-group-title {
@@ -160,7 +146,6 @@
             color: var(--text-muted);
         }
 
-        /* GRID & CARDS */
         .subcategory-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -173,7 +158,6 @@
             border-radius: 4px;
             overflow: hidden;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .sub-card:hover {
@@ -186,12 +170,6 @@
             height: 240px;
             object-fit: cover;
             background-color: #EFEFEF;
-            filter: grayscale(15%);
-            transition: filter 0.4s ease;
-        }
-
-        .sub-card:hover img {
-            filter: grayscale(0%);
         }
 
         .card-body {
@@ -204,51 +182,56 @@
             font-weight: 800;
             margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .card-body p {
             font-size: 14px;
             color: var(--text-muted);
             margin-bottom: 16px;
-            line-height: 1.5;
         }
 
         .brand-note {
             font-size: 12px;
             color: var(--brand-gold);
             font-weight: 500;
-            background-color: var(--bg-color);
             padding: 10px 12px;
             border-radius: 4px;
             border-left: 3px solid var(--brand-gold);
+            background-color: var(--bg-color);
         }
 
-        .quote-box {
-            margin-top: 60px;
-            padding: 40px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            border-radius: 4px;
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; }
         }
+    </style>
+</head>
+<body>
 
-        .quote-box h4 {
-            font-family: var(--font-heading);
-            font-size: 22px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-wrapper">
+                <span class="logo-text">NAZRA</span>
+                <span class="logo-subtext">Food &bull; Apparel &bull; Distribution</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="food.html" class="active">Food</a></li>
+                    <li><a href="apparel.html">Apparel</a></li>
+                    <li><a href="index.html#contact-us">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        .quote-box p {
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--text-muted);
-            font-size: 16px;
-        }
+    <nav class="nav-tabs">
+        <a href="food.html" class="nav-link active">🌾 Food Catalogue</a>
+        <a href="apparel.html" class="nav-link">👕 Apparel Catalogue</a>
+    </nav>
 
-        <!-- Group 1: Spices -->
+    <section class="catalog-section">
+        <h2 class="main-category-title">🌾 Food & Grocery</h2>
+
         <h3 class="sub-group-title">1. Spices & Recipe Mixes</h3>
         <div class="subcategory-grid">
             <div class="sub-card">
@@ -256,73 +239,55 @@
                 <div class="card-body">
                     <h4>Ground Spices</h4>
                     <p>Turmeric, Chilli, Coriander, Cumin, and Curry Powders.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic ground spices available upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic ground spices available upon request.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://foodiesterminal.com/wp-content/uploads/2019/09/homemade-biriyani-masala-powder-679x1024.jpg" alt="Recipe Mixes">
                 <div class="card-body">
                     <h4>Recipe Masala Mixes</h4>
                     <p>Biriyani Masala, Chicken, Fish, and Meat Curry Powders.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic recipe mixes supplied upon order.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic recipe mixes supplied upon order.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80" alt="Whole Spices">
                 <div class="card-body">
                     <h4>Whole Spices & Fibers</h4>
                     <p>Dry Chilli, Bay Leaf, Basil Seeds, and Isabgul Bhusi.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic fiber & spice lines available upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic fiber & spice lines available upon request.</em></div>
                 </div>
             </div>
         </div>
 
-        <!-- Group 2: Biscuits & Bakery -->
         <h3 class="sub-group-title">2. Biscuits, Cookies & Bakery</h3>
         <div class="subcategory-grid">
             <div class="sub-card">
-                <img src="https://foodpanda.dhmedia.io/image/product-information-management/686ccba19d0e5601f0b65627.jpg?height=480" alt="Biscuits & Cookies">
+                <img src="https://foodpanda.dhmedia.io/image/product-information-management/686ccba19d0e5601f0b65627.jpg?height=480" alt="Biscuits">
                 <div class="card-body">
                     <h4>Packaged Biscuits</h4>
                     <p>Energy Plus, Nutty, Biscotti, Choco Marie, Lexus, Sugarfree.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic Industries biscuit available upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic Industries biscuit available upon request.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://www.foodinconline.co.uk/pub/media/catalog/product/cache/85f65f7cc8422578ca5b770b17812aff/o/l/olympic-dry-cake-jar_2.png" alt="Jar Cookies">
                 <div class="card-body">
                     <h4>Jar Cookies & Dry Cakes</h4>
                     <p>Classic Cookies, Badami, Lazeez, Cake Rusk, Finger Cakes.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic dry cakes & jar cookies available upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic dry cakes & jar cookies available upon request.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://asmishop.com/assets/images/products/176441064538UavwnR.png" alt="Rusks & Toasts">
                 <div class="card-body">
                     <h4>Rusks & Toast Biscuits</h4>
                     <p>Ghee Toast, Muri Toast, Daily Toast, Premium Sweet Toast.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic toast lines supplied on request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic toast lines supplied on request.</em></div>
                 </div>
             </div>
         </div>
 
-        <!-- Group 3: Snacks -->
         <h3 class="sub-group-title">3. Snacks & Savouries</h3>
         <div class="subcategory-grid">
             <div class="sub-card">
@@ -330,49 +295,39 @@
                 <div class="card-body">
                     <h4>Chanachur & Mixes</h4>
                     <p>Bar-B-Q, Classic, Hot Chanachur, Jhal Muri, Chira Bhaja.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic savory chanachur supplied upon order.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic savory chanachur supplied upon order.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://gs.painest.com/public/uploads/products/photos/olympic-crispo-doi-papri-chat-flavour-chips---30g-paikaree.webp" alt="Puffed Chips">
                 <div class="card-body">
                     <h4>Chips & Puffed Snacks</h4>
                     <p>Crispo Chips (Doi-Papri, Masala), Pillow Fillow (Chocolate, Orange).</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic brand chips available upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic brand chips available upon request.</em></div>
                 </div>
             </div>
         </div>
 
-        <!-- Group 4: Staples & Beverages -->
-        <h3 class="sub-group-title">4. Staples, Candies</h3>
+        <h3 class="sub-group-title">4. Staples & Candies</h3>
         <div class="subcategory-grid">
             <div class="sub-card">
                 <img src="https://efoodsdirect.co.uk/wp-content/uploads/2025/07/Chasi-Chinigura-Rice.png" alt="Aromatic Rice">
                 <div class="card-body">
                     <h4>Aromatic Rice</h4>
                     <p>Premium Chinigura Aromatic Rice.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic rice and staple goods provided upon request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic rice and staple goods provided upon request.</em></div>
                 </div>
             </div>
-
             <div class="sub-card">
                 <img src="https://admin.olympicbd.com/storage/Resized%20Production%20Section%20(Complete)/KV%20and%20Solid%20Background/Candy%20and%20Chocolates/Hajmi/Hajmi-Tetul.jpg" alt="Candies">
                 <div class="card-body">
                     <h4>Candies & Confectionery</h4>
                     <p>Coffeeto, Hajmi, Green Mango, Litchi, Wafers.</p>
-                    <div class="brand-note">
-                        📌 <em>Category example. Olympic candy and wafer lines supplied on request.</em>
-                    </div>
+                    <div class="brand-note">📌 <em>Category example. Olympic candy and wafer lines supplied on request.</em></div>
                 </div>
             </div>
         </div>
     </section>
+
 </body>
 </html>
