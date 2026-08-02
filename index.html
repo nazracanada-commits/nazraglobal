@@ -3,709 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAZRA | Food • Apparel • Distribution</title>
-    <!-- Google Fonts for Bold, Clean Modern Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <title>Nazra Global | Product Catalogue</title>
     <style>
-        /* CSS RESET & VARIABLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* =========================================================
+           BRAND COLOR PALETTE (Matched to Logo & Brand Theme)
+           ========================================================= */
+        :root {
+            --brand-bg: #F9F9F6;          /* Warm Cream / Off-White */
+            --brand-dark: #1C1C1C;        /* Deep Charcoal / Soft Black */
+            --brand-card-bg: #FFFFFF;     /* Pure White Card Background */
+            --brand-gold: #C5A059;        /* Premium Gold Accent */
+            --brand-green: #2D5A27;       /* Deep Natural Green */
+            --text-muted: #666666;        /* Subdued Slate Text */
+            --border-light: #E8E8E3;      /* Subtle Warm Border */
+            --shadow: 0 10px 25px rgba(0,0,0,0.04);
         }
 
-        :root {
-            --bg-color: #F9F9F6;
-            --card-bg: #FFFFFF;
-            --text-main: #1C1C1C;
-            --text-muted: #666666;
-            --border-color: #E2E2DF;
-            --accent-hover: #000000;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
+        /* Base Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             line-height: 1.6;
-            scroll-behavior: smooth;
+            color: var(--brand-dark);
+            background-color: var(--brand-bg);
+            padding: 40px 20px;
         }
 
-        /* NAVIGATION BAR */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Brand Header */
         header {
-            position: sticky;
-            top: 0;
-            background-color: rgba(249, 249, 246, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-text {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 28px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-main);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .logo-subtext {
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            margin-top: 5px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--text-muted);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            padding: 100px 24px 80px;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            background-color: var(--brand-dark);
+            color: #ffffff;
+            padding: 45px 20px;
+            border-radius: 12px 12px 0 0;
         }
 
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 48px;
-            letter-spacing: -1px;
-            line-height: 1.15;
+        header h1 {
+            font-size: 2.4rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 680px;
-            margin: 0 auto 40px;
-            font-weight: 400;
+        header p {
+            color: var(--brand-gold);
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* SECTIONS GENERAL */
-        section {
-            padding: 80px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 48px;
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 16px;
+        /* Page Navigation Tabs */
+        .nav-tabs {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            background-color: var(--brand-card-bg);
+            border-bottom: 2px solid var(--border-light);
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 18px 20px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--brand-dark);
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-btn:hover {
+            background-color: #F0F0EC;
+        }
+
+        .tab-btn.active {
+            color: #FFFFFF;
+            background-color: var(--brand-dark);
+            border-bottom: 3px solid var(--brand-gold);
+        }
+
+        /* Page Display Switching */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.35s ease-in-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .catalog-section {
+            background: var(--brand-card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow);
         }
 
         .section-title {
-            font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-gold);
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        /* PRODUCT GRIDS */
-        .product-grid {
+        /* Food Product Grid Cards */
+        .food-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+        .food-card {
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--brand-card-bg);
+            display: flex;
+            flex-direction: column;
         }
 
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
-        }
-
-        .product-image {
+        .food-card img {
             width: 100%;
-            height: 240px;
+            height: 200px;
             object-fit: cover;
-            background-color: #EFEFEF;
-            filter: grayscale(10%);
-            transition: filter 0.3s ease;
         }
 
-        .product-card:hover .product-image {
-            filter: grayscale(0%);
+        .food-card-body {
+            padding: 20px;
+            flex-grow: 1;
         }
 
-        .product-content {
-            padding: 24px;
+        .food-card-body h3 {
+            font-size: 1.2rem;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 8px;
         }
 
-        .product-title {
-            font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .product-description {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* LIST TOGGLE STYLES */
-        details {
-            margin-top: 12px;
-        }
-
-        summary {
-            font-family: var(--font-heading);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            color: var(--text-main);
-            outline: none;
-            margin-bottom: 8px;
-            transition: color 0.2s ease;
-        }
-        
-        summary:hover {
-            color: var(--text-muted);
-        }
-
-        details p {
-            font-size: 13px;
-            color: var(--text-main);
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        details ul {
-            list-style-type: square;
-            padding-left: 20px;
-            margin-bottom: 8px;
-        }
-
-        details ul li {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        /* ABOUT SECTION */
-        .about-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 48px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-
-        .about-text h3 {
-            font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 24px;
-        }
-
-        .about-list {
+        .food-card-body ul {
             list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
         }
 
-        .about-list li {
+        .food-card-body li {
+            font-size: 0.92rem;
+            color: var(--brand-dark);
+            margin-bottom: 6px;
+            padding-left: 14px;
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: var(--text-main);
-            font-weight: 500;
         }
 
-        .about-list li::before {
-            content: "—";
+        .food-card-body li::before {
+            content: "•";
+            color: var(--brand-gold);
+            font-weight: bold;
             position: absolute;
             left: 0;
-            color: var(--text-main);
         }
 
-        /* CONTACT SECTION */
-        .contact-wrapper {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 48px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .email-direct {
-            text-align: center;
-            padding-bottom: 32px;
-            margin-bottom: 32px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .email-direct span {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Caption Disclaimer Note */
+        .brand-note {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            display: block;
-            margin-bottom: 8px;
+            background-color: var(--brand-bg);
+            padding: 10px 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--brand-gold);
+            font-style: italic;
+            margin-top: auto;
         }
 
-        .email-direct a {
-            font-family: var(--font-heading);
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: 0.5px;
+        /* Apparel Section Styling */
+        .apparel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 22px;
+            margin-top: 10px;
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .apparel-card {
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--brand-card-bg);
+            text-align: center;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .apparel-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
         }
 
-        .form-group label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-control {
+        .apparel-card h4 {
             padding: 14px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-            font-family: var(--font-body);
-            font-size: 14px;
-            color: var(--text-main);
-            transition: border-color 0.2s ease;
+            font-size: 1rem;
+            color: var(--brand-dark);
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--text-main);
+        /* Commitment Box */
+        .quote-box {
+            background-color: var(--brand-bg);
+            border-left: 4px solid var(--brand-dark);
+            padding: 22px;
+            margin-top: 30px;
+            border-radius: 0 8px 8px 0;
         }
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
+        .quote-box h4 {
+            color: var(--brand-dark);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
         }
 
-        .radio-group {
-            display: flex;
-            gap: 24px;
-            margin-top: 4px;
-        }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            cursor: pointer;
-            text-transform: none;
-        }
-
-        .submit-btn {
-            background-color: var(--text-main);
-            color: #FFFFFF;
-            border: none;
-            padding: 16px;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            margin-top: 12px;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--accent-hover);
-        }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 40px 24px;
-            text-align: center;
-            font-size: 12px;
+        .quote-box p {
             color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-            .radio-group {
-                flex-direction: column;
-                gap: 12px;
-            }
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo-text">
-                NAZRA
-                <span class="logo-subtext">Food • Apparel • Distribution</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#food">Food</a></li>
-                    <li><a href="#apparel">Apparel</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        
+        <!-- HEADER BANNER -->
+        <header>
+            <h1>Nazra Global</h1>
+            <p>Import & Export Product Catalogue</p>
+        </header>
 
-    <!-- HERO SECTION -->
-    <main>
-        <section class="hero">
-            <h1>Quality Global Trade, Delivered Across Canada</h1>
-            <p>Your trusted Canadian wholesale partner for imported dry foods, authentic pantry staples, and high-quality everyday garments.</p>
-        </section>
+        <!-- TABS / PAGE SWITCHER -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchPage('food', this)">🌾 Food & Grocery</button>
+            <button class="tab-btn" onclick="switchPage('apparel', this)">👕 Apparel & Garments</button>
+        </nav>
 
-        <!-- FOOD CATEGORY SECTION -->
-        <section id="food">
-            <div class="section-header">
-                <h2 class="section-title">Food Division</h2>
-                <span class="section-subtitle">Bakery, Pantry & Staples</span>
-            </div>
-            
-            <div class="product-grid">
-                <!-- Biscuits & Cookies -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="Biscuits and Cookies" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Biscuits & Cookies</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide biscuits and cookies like these:</p>
+        <!-- PAGE 1: FOOD & GROCERY -->
+        <div id="food-page" class="page-content active">
+            <section class="catalog-section">
+                <h2 class="section-title">🌾 Food & Grocery Import/Export</h2>
+
+                <div class="food-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Spices & Seasonings Example">
+                        <div class="food-card-body">
+                            <h3>1. Spices & Recipe Mixes</h3>
                             <ul>
-                                <li>Energy Plus Biscuits[cite: 1]</li>
-                                <li>Nutty Biscuits[cite: 1]</li>
-                                <li>Bourbon Chocolate Sandwich Biscuits[cite: 1]</li>
-                                <li>Tip Biscuits[cite: 1]</li>
-                                <li>Butter Bite Biscuits[cite: 1]</li>
-                                <li>Digestive Biscuits[cite: 1]</li>
+                                <li><strong>Ground Spices:</strong> Chilli, Coriander, Cumin, Curry, Turmeric</li>
+                                <li><strong>Recipe Mixes:</strong> Biriyani, Chicken, Fish, Meat Masala</li>
+                                <li><strong>Whole Spices:</strong> Dry Chilli, Bay Leaf, Basil Seeds, Psyllium Husk</li>
                             </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Rusks & Cakes -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Rusks and Cakes" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Rusks & Cakes</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide rusks and cakes like these:</p>
-                            <ul>
-                                <li>Daily Toast[cite: 1]</li>
-                                <li>Ghee Toast[cite: 1]</li>
-                                <li>Muri Toast[cite: 1]</li>
-                                <li>Sweet Toast[cite: 1]</li>
-                                <li>Marble Dry Cake[cite: 1]</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Candies & Wafers -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80" alt="Candies and Wafers" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Candies & Wafers</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide candies and wafers like these:</p>
-                            <ul>
-                                <li>Knock Chocolate Coated Wafer[cite: 1]</li>
-                                <li>Olino Wafer[cite: 1]</li>
-                                <li>Coffeeto Candy[cite: 1]</li>
-                                <li>Pulse-Masala Candy[cite: 1]</li>
-                                <li>Juicy Litchi Candy[cite: 1]</li>
-                                <li>Green Mango Candy[cite: 1]</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Snacks & Savouries -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=600&q=80" alt="Snacks and Savouries" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Snacks & Savouries</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide snacks and savouries like these:</p>
-                            <ul>
-                                <li>Bar-B-Q Chanachur[cite: 1]</li>
-                                <li>Classic Chanachur[cite: 1]</li>
-                                <li>Crispo Chips[cite: 1]</li>
-                                <li>Foodie Bite Jhal Muri[cite: 1]</li>
-                                <li>Fried Dal & Fried Peas[cite: 1]</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Spices & Recipe Mixes -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Spices and Recipe Mixes" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Spices & Recipe Mixes</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide spices like these:</p>
-                            <ul>
-                                <li>Chilli Powder[cite: 1]</li>
-                                <li>Coriander Powder[cite: 1]</li>
-                                <li>Cumin Powder[cite: 1]</li>
-                                <li>Turmeric Powder[cite: 1]</li>
-                                <li>Biriyani Masala[cite: 1]</li>
-                                <li>Chicken Curry Powder[cite: 1]</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Aromatic Rice -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Aromatic Rice" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Aromatic Rice</h3>
-                        <details>
-                            <summary>View Available Items</summary>
-                            <p>We can provide aromatic rice like this:</p>
-                            <ul>
-                                <li>Chinigura Aromatic Rice[cite: 1]</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- APPAREL CATEGORY SECTION -->
-        <section id="apparel">
-            <div class="section-header">
-                <h2 class="section-title">Apparel Division</h2>
-                <span class="section-subtitle">Textiles & Garments</span>
-            </div>
-
-            <div class="product-grid">
-                <!-- T-Shirts -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="Wholesale T-Shirts" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">T-Shirts</h3>
-                        <p class="product-description">We can provide any kind of apparel on any quantity with the highest quality and best price.</p>
-                    </div>
-                </div>
-
-                <!-- Hoodies -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80" alt="Wholesale Hoodies" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Hoodies</h3>
-                        <p class="product-description">We can provide any kind of apparel on any quantity with the highest quality and best price.</p>
-                    </div>
-                </div>
-
-                <!-- Sweaters -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509942774463-acf339cf87d5?auto=format&fit=crop&w=600&q=80" alt="Wholesale Sweaters" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Sweaters</h3>
-                        <p class="product-description">We can provide any kind of apparel on any quantity with the highest quality and best price.</p>
-                    </div>
-                </div>
-
-                <!-- Caps -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80" alt="Wholesale Caps" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Caps</h3>
-                        <p class="product-description">We can provide any kind of apparel on any quantity with the highest quality and best price.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT US SECTION -->
-        <section id="about">
-            <div class="section-header">
-                <h2 class="section-title">About Nazra</h2>
-                <span class="section-subtitle">Bridging Imports & Canadian Markets</span>
-            </div>
-
-            <div class="about-container">
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>At <strong>Nazra</strong>, we specialize in bringing essential, high-quality goods directly to Canada. Our goal is simple: to connect Canadian businesses, retailers, and communities with top-tier dry foods and everyday apparel sourced through reliable global manufacturing networks.</p>
-                    <p>We serve as a streamlined distribution bridge, ensuring that every product entering our supply chain meets high standards of quality, freshness, and craftsmanship.</p>
-                </div>
-
-                <div class="about-text">
-                    <h3>What We Do</h3>
-                    <ul class="about-list">
-                        <li><strong>Food Distribution:</strong> Importing dry foods, tea-time bakery favorites, spices, and premium rice for Canadian retail shelves.</li>
-                        <li><strong>Apparel Supply:</strong> Sourcing durable, high-quality everyday garments and textiles tailored for commercial distribution.</li>
-                        <li><strong>Reliable Logistics:</strong> Managing the import and distribution flow to make wholesale sourcing effortless for our Canadian partners.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <span class="section-subtitle">B2B & Wholesale Inquiries</span>
-            </div>
-
-            <div class="contact-wrapper">
-                <div class="email-direct">
-                    <span>Direct Email Inquiries</span>
-                    <a href="mailto:nazracanada@gmail.com">nazracanada@gmail.com</a>
-                </div>
-
-                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you. Your inquiry has been sent.');">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="business">Business Name</label>
-                        <input type="text" id="business" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Product Interest</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="interest" value="food" checked> Food Division
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="interest" value="apparel"> Apparel Division
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="interest" value="general"> General Inquiry
-                            </label>
+                            <div class="brand-note">
+                                📌 <em>Image shown for category illustration. Olympic Industries spice mixes and products are available upon request.</em>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" class="form-control" required></textarea>
+                    <!-- Item 2 -->
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="Biscuits & Bakery Example">
+                        <div class="food-card-body">
+                            <h3>2. Biscuits, Cookies & Bakery</h3>
+                            <ul>
+                                <li><strong>Biscuits & Cookies:</strong> Energy Plus, Nutty, Biscotti, Choco Marie, Digestive, Lexus, Sugarfree</li>
+                                <li><strong>Jar Cookies & Dry Cakes:</strong> Classic, Badami, Lazeez, Cake Rusk</li>
+                                <li><strong>Rusks & Toasts:</strong> Daily, Ghee, Muri, Sweet, Premium Toast</li>
+                            </ul>
+                            <div class="brand-note">
+                                📌 <em>Image shown for category illustration. Full line of Olympic Industries biscuits and dry cakes supplied upon request.</em>
+                            </div>
+                        </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Inquiry</button>
-                </form>
-            </div>
-        </section>
-    </main>
+                    <!-- Item 3 -->
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=600&q=80" alt="Snacks & Savouries Example">
+                        <div class="food-card-body">
+                            <h3>3. Snacks & Savouries</h3>
+                            <ul>
+                                <li><strong>Chanachur & Mixes:</strong> Bar-B-Q, Classic, Hot Chanachur, Jhal Muri, Chira Bhaja</li>
+                                <li><strong>Chips & Puffed Snacks:</strong> Crispo Chips, Pillow Fillow Chips</li>
+                                <li><strong>Fried Staples:</strong> Fried Dal, Fried Peas, Puffed Rice (Muri)</li>
+                            </ul>
+                            <div class="brand-note">
+                                📌 <em>Image shown for category illustration. Olympic brand savory snacks and chanachur available upon order.</em>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; Nazra Global. Food • Apparel • Distribution. All rights reserved.</p>
-    </footer>
+                    <!-- Item 4 -->
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=600&q=80" alt="Noodles Example">
+                        <div class="food-card-body">
+                            <h3>4. Noodles & Vermicelli</h3>
+                            <ul>
+                                <li><strong>Instant Noodles:</strong> Foodie Instant Noodles (Curry, Beef, Chicken, Vegetable, Spicy)</li>
+                                <li><strong>Ramen:</strong> Foodie Ramen Noodles (Creamy & Spicy)</li>
+                                <li><strong>Lachcha:</strong> Fried Vermicelli / Lachcha Semai</li>
+                            </ul>
+                            <div class="brand-note">
+                                📌 <em>Image shown for category illustration. Complete range of Olympic Foodie noodles & vermicelli supplied on request.</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Rice & Staples Example">
+                        <div class="food-card-body">
+                            <h3>5. Staples, Condiments & Sweets</h3>
+                            <ul>
+                                <li><strong>Aromatic Rice & Oil:</strong> Chinigura Rice, Pure Premium Mustard Oil</li>
+                                <li><strong>Pickles:</strong> Mango, Mixed, Olive Pickle</li>
+                                <li><strong>Confectionery:</strong> Coffeeto, Hajmi, Impulse, Fruit Candies, Wafers</li>
+                                <li><strong>Beverages:</strong> Litchi Drink, Orange Drink</li>
+                            </ul>
+                            <div class="brand-note">
+                                📌 <em>Image shown for category illustration. Olympic confectioneries, beverages, and staples provided upon request.</em>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 2: APPAREL & GARMENTS -->
+        <div id="apparel-page" class="page-content">
+            <section class="catalog-section">
+                <h2 class="section-title">👕 Apparel & Garments Supply</h2>
+
+                <div class="apparel-grid">
+                    <div class="apparel-card">
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="T-Shirts">
+                        <h4>T-Shirts</h4>
+                    </div>
+                    <div class="apparel-card">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=600&q=80" alt="Caps & Hats">
+                        <h4>Caps & Hats</h4>
+                    </div>
+                    <div class="apparel-card">
+                        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Sweaters">
+                        <h4>Sweaters</h4>
+                    </div>
+                    <div class="apparel-card">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Hoodies">
+                        <h4>Hoodies</h4>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    <h4>Our Apparel Commitment</h4>
+                    <p>We can provide any kind of apparel in any quantity with the highest quality and best price. Whether you need custom branding, bulk promotional orders, or tailored retail lines, we deliver flexible production options to fit your exact specifications.</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT FOR PAGE SWITCHING -->
+    <script>
+        function switchPage(pageName, element) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (pageName === 'food') {
+                document.getElementById('food-page').classList.add('active');
+            } else if (pageName === 'apparel') {
+                document.getElementById('apparel-page').classList.add('active');
+            }
+
+            element.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
