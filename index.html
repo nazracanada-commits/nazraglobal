@@ -311,6 +311,320 @@
             .hero h1 { font-size: 28px; }
             .category-image-wrapper { height: 200px; }
             .sub-item-image-wrapper { height: 180px; }
+        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAZRA | Global Import & Export</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #F3F3ED; 
+            --card-bg: #FFFFFF;
+            --text-main: #232323; 
+            --text-muted: #6B6B6B;
+            --border-color: #E2E2D9;
+            --brand-gold: #A69076; 
+
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* GLOBAL IMAGE RESET FIX */
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(243, 243, 237, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 42px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            line-height: 0.9;
+        }
+
+        .logo-subtext {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 6px;
+            margin-top: 8px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--brand-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 70px 24px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* CATEGORIES SECTION */
+        .main-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* MAIN DIVISION CARDS */
+        .hero-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+        }
+
+        /* FIXED HEIGHT WRAPPER FOR MAIN DIVISION IMAGES */
+        .category-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            background-color: #EFEFEF;
+        }
+
+        .category-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .category-card-body {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .category-card-body h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .category-card-body p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-link {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--brand-gold);
+            padding-bottom: 4px;
+            width: fit-content;
+        }
+
+        /* FEATURED SUB-GRID SHOWCASE */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .sub-item-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* FIXED HEIGHT WRAPPER FOR FEATURED PRODUCT IMAGES */
+        .sub-item-image-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #EFEFEF;
+        }
+
+        .sub-item-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sub-item-card:hover .sub-item-image-wrapper img {
+            transform: scale(1.03);
+        }
+
+        .sub-item-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .sub-item-info h4 {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .sub-item-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* CONTACT FOOTER */
+        footer {
+            background-color: var(--text-main);
+            color: #FFFFFF;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #A0A0A0;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; }
+            .hero h1 { font-size: 28px; }
+            .category-image-wrapper { height: 200px; }
+            .sub-item-image-wrapper { height: 180px; }
         }
     </style>
 </head>
@@ -424,8 +738,167 @@
     <footer id="contact-us">
         <h3>NAZRA GLOBAL</h3>
         <p>Food & Apparel Import & Export Solutions</p>
-        <p>Email: contact@nazraglobal.com</p>
+        <p>Email: nazracanada@gmail.com </p>
         <p>&copy; 2026 Nazra Global. All Rights Reserved.</p>
+    </footer>
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-wrapper">
+                <span class="logo-text">NAZRA</span>
+                <span class="logo-subtext">Food &bull; Apparel &bull; Distribution</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="food.html">Food</a></li>
+                    <li><a href="apparel.html">Apparel</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO INTRO -->
+    <section class="hero">
+        <h1>Global Import & Export Solutions</h1>
+        <p>Connecting premium food products and ready-made apparel from Bangladesh directly to Canadian distributors and retailers.</p>
+    </section>
+
+    <!-- MAIN CATEGORIES WITH PICTURES -->
+    <section class="main-section">
+        <h2 class="section-title">Explore Main Divisions</h2>
+
+        <div class="hero-categories-grid">
+            
+            <!-- Food Division Card -->
+            <a href="food.html" class="category-card">
+                <div class="category-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Food & Grocery Spices">
+                </div>
+                <div class="category-card-body">
+                    <h3>🌾 Food & Grocery</h3>
+                    <p>Premium spices, recipe mixes, packaged biscuits, cookies, snacks, and aromatic Chinigura rice sourced from top brands.</p>
+                    <span class="btn-link">View Food Catalogue &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Apparel Division Card -->
+            <a href="apparel.html" class="category-card">
+                <div class="category-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80" alt="Apparel & Textiles">
+                </div>
+                <div class="category-card-body">
+                    <h3>👕 Apparel & Textiles</h3>
+                    <p>High-quality ready-made garments, casual wear, formal apparel, denim, knitwear, and home textiles for commercial supply.</p>
+                    <span class="btn-link">View Apparel Catalogue &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- FEATURED CATEGORY HIGHLIGHTS -->
+        <h2 class="section-title">Featured Product Categories</h2>
+
+        <div class="sub-grid">
+            
+            <div class="sub-item-card">
+                <div class="sub-item-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80" alt="Spices">
+                </div>
+                <div class="sub-item-info">
+                    <h4>Authentic Spices</h4>
+                    <p>Ground chilli, turmeric, cumin, coriander & recipe masalas.</p>
+                </div>
+            </div>
+
+            <div class="sub-item-card">
+                <div class="sub-item-image-wrapper">
+                    <img src="https://foodpanda.dhmedia.io/image/product-information-management/686ccba19d0e5601f0b65627.jpg?height=480" alt="Biscuits">
+                </div>
+                <div class="sub-item-info">
+                    <h4>Bakery & Biscuits</h4>
+                    <p>Energy biscuits, jar cookies, dry cakes, and tea toasts.</p>
+                </div>
+            </div>
+
+            <div class="sub-item-card">
+                <div class="sub-item-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80" alt="Apparel Wear">
+                </div>
+                <div class="sub-item-info">
+                    <h4>Knitwear & Shirts</h4>
+                    <p>Cotton t-shirts, polo shirts, and woven garments.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact-us">
+        <h3>NAZRA GLOBAL</h3>
+        <p>Food & Apparel Import & Export Solutions</p>
+        <p>Email: nazracanada@gmail.com</p>
+        <p>&copy; 2026 Nazra Global. All Rights Reserved.</p>
+        <!-- CONTACT US SECTION -->
+<section class="contact-section" id="contact-us">
+    <div class="contact-header">
+        <h2>Get in Touch</h2>
+        <p>Have inquiries about commercial supply, wholesale pricing, or product distribution? Send us a message below.</p>
+    </div>
+
+    <div class="contact-grid">
+        
+        <!-- Info Column -->
+        <div class="contact-info-card">
+            <h3>Contact Details</h3>
+            
+            <div class="info-item">
+                <h4>General & B2B Inquiries</h4>
+                <p>nazracanada@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <h4>Division Coverage</h4>
+                <p>Food & Grocery Distribution<br>Ready-Made Garments & Textiles</p>
+            </div>
+
+        <!-- Form Column -->
+        <form class="contact-form-card" action="mailto:nazracanada@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="Name" placeholder="Your Name or Company" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" placeholder="email@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="division">Department / Category</label>
+                <select id="division" name="Division">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Food Division">Food & Grocery Import</option>
+                    <option value="Apparel Division">Apparel & Textiles</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="Message" rows="5" placeholder="Details regarding products, required quantities, or distribution inquiries..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+    </div>
+</section>
     </footer>
 
 </body>
