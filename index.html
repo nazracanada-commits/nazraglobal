@@ -3,443 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazra Global | Premium Food Import & Export (Bangladesh to Canada)</title>
+    <title>NAZRA | Food • Apparel • Distribution</title>
+    <!-- Google Fonts for Bold, Clean Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary: #064e3b; /* Deep Emerald Green */
-            --primary-light: #047857;
-            --accent: #d97706; /* Warm Amber / Spice Tone */
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-        }
-
+        /* CSS RESET & VARIABLES */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #F9F9F6;
+            --card-bg: #FFFFFF;
+            --text-main: #1C1C1C;
+            --text-muted: #666666;
+            --border-color: #E2E2DF;
+            --accent-hover: #000000;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Header / Nav */
+        /* NAVIGATION BAR */
         header {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
+            background-color: rgba(249, 249, 246, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
         }
 
-        nav {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
+        .logo-text {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
             text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            flex-direction: column;
+            line-height: 1;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
+        .logo-subtext {
+            font-size: 9px;
             font-weight: 600;
-            transition: color 0.2s;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
         }
 
-        .btn-nav {
-            background: var(--primary);
-            color: #fff !important;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
         }
 
-        /* Hero Section */
+        nav a:hover {
+            color: var(--text-muted);
+        }
+
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(6, 78, 59, 0.88), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80') center/cover;
-            color: white;
-            padding: 6rem 2rem;
+            padding: 100px 24px 80px;
             text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 48px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 40px;
+            font-weight: 400;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        /* Features / Value Prop */
-        .features {
-            max-width: 1200px;
-            margin: -3rem auto 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .feature-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Products Section */
-        .section {
-            padding: 5rem 2rem;
+        /* SECTIONS GENERAL */
+        section {
+            padding: 80px 24px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
         }
 
+        /* PRODUCT GRIDS */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
         }
 
         .product-card {
-            background: white;
-            border-radius: 8px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
         }
 
-        .product-img {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
+        .product-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #EFEFEF;
+            filter: grayscale(10%);
+            transition: filter 0.3s ease;
         }
 
-        .product-info {
-            padding: 1.5rem;
+        .product-card:hover .product-image {
+            filter: grayscale(0%);
         }
 
-        .product-info h3 {
-            margin-bottom: 0.5rem;
+        .product-content {
+            padding: 24px;
         }
 
-        /* Trade Bridge / Info Section */
-        .trade-bridge {
-            background: #e2e8f0;
-            border-radius: 12px;
-            padding: 3rem;
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
+            gap: 48px;
         }
 
-        .trade-bridge h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 16px;
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .about-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-main);
+        }
+
+        /* CONTACT SECTION */
+        .contact-wrapper {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .email-direct {
+            text-align: center;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .email-direct span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .email-direct a {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
+            font-size: 12px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .form-group input, 
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
+        .form-control {
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-main);
+            transition: border-color 0.2s ease;
         }
 
-        /* Footer */
+        .form-control:focus {
+            outline: none;
+            border-color: var(--text-main);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 4px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: none;
+        }
+
+        .submit-btn {
+            background-color: var(--text-main);
+            color: #FFFFFF;
+            border: none;
+            padding: 16px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 12px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* FOOTER */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 1.5rem;
-            border-top: 1px solid #334155;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
             text-align: center;
-            color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            .trade-bridge, .contact-container {
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .about-container {
                 grid-template-columns: 1fr;
             }
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- NAVIGATION -->
     <header>
-        <nav>
-            <a href="#" class="logo">NAZRA <span>GLOBAL</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#products">Our Products</a></li>
-                <li><a href="#trade">Import/Export</a></li>
-                <li><a href="#contact" class="btn-nav">Contact Us</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <a href="#" class="logo-text">
+                NAZRA
+                <span class="logo-subtext">Food • Apparel • Distribution</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#food">Food</a></li>
+                    <li><a href="#apparel">Apparel</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Connecting Authentic Bangladeshi Taste to Canadian Markets</h1>
-            <p>Nazra Global specializes in importing high-demand, premium-grade food products, spices, and agricultural goods directly from Bangladesh to Canada.</p>
-            <div class="cta-buttons">
-                <a href="#products" class="btn-primary">View Product Line</a>
-                <a href="#contact" class="btn-secondary">Request Wholesale Quote</a>
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero">
+            <h1>Quality Global Trade, Delivered Across Canada</h1>
+            <p>Your trusted Canadian wholesale partner for imported dry foods, authentic pantry staples, and high-quality everyday garments.</p>
+        </section>
+
+        <!-- FOOD CATEGORY SECTION -->
+        <section id="food">
+            <div class="section-header">
+                <h2 class="section-title">Food Division</h2>
+                <span class="section-subtitle">Bakery, Pantry & Staples</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Feature Cards -->
-    <div class="features">
-        <div class="feature-card">
-            <h3>Direct Sourcing</h3>
-            <p>Sourced directly from verified producers and growers across Bangladesh to guarantee origin and taste.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Full Compliance</h3>
-            <p>100% CFIA (Canadian Food Inspection Agency) compliant with clear regulatory labeling and standards.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Reliable Logistics</h3>
-            <p>Seamless supply chain network ensuring timely ocean and air freight deliveries across North America.</p>
-        </div>
-    </div>
-
-    <!-- Products Catalog -->
-    <section class="section" id="products">
-        <div class="section-title">
-            <h2>Our Core Import Categories</h2>
-            <p style="color: var(--gray);">Premium food products curated for South Asian markets and commercial distribution.</p>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="product-info">
-                    <h3>Pure Spices & Herbs</h3>
-                    <p>Turmeric, chili powder, coriander, cumin, and specialty spice blends ground from raw harvests.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trade Bridge Section -->
-    <section class="section" id="trade">
-        <div class="trade-bridge">
-            <div>
-                <h3>Your Trusted Trade Partner</h3>
-                <p>At <strong>Nazra Global</strong>, we bridge the supply chain gap between producers in Bangladesh and commercial buyers in Canada. Whether you operate a grocery chain, restaurant network, or food distribution business, we handle bulk trade, customs clearance, and quality assurance seamlessly.</p>
-            </div>
-            <div>
-                <ul style="list-style: none; line-height: 2;">
-                    <li><strong>Origin Country:</strong> Bangladesh (Dhaka)</li>
-                    <li><strong>Destination Port:</strong> Canada (Toronto / Vancouver / Montreal)</li>
-                    <li><strong>Services:</strong> Bulk Importing, Private Labeling, Wholesale Supply</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="section" id="contact">
-        <div class="section-title">
-            <h2>Get in Touch</h2>
-            <p style="color: var(--gray);">Send us an inquiry for wholesale pricing, trade partnerships, or sample requests.</p>
-        </div>
-
-        <div class="contact-container">
-            <div>
-                <h3>Business Inquiries</h3>
-                <p style="margin-bottom: 1.5rem; color: var(--gray);">Fill out the form to connect with our trade team directly at <strong>nazraglobal.com</strong>.</p>
-                
-                <div style="margin-bottom: 1rem;">
-                    <strong>Canada Office / Trade Desk:</strong>
-                    <p>Ontario, Canada</p>
+            
+            <div class="product-grid">
+                <!-- Biscuits & Cookies -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="Biscuits and Cookies" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Biscuits & Cookies</h3>
+                        <p class="product-description">Classic sweet, salted, and tea-time biscuits packaged to maintain long shelf life and consistent crispness for retail and grocery distribution.</p>
+                    </div>
                 </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong>Email Direct:</strong>
-                    <p>nazracanada@gmail.com</p>
+
+                <!-- Rusks & Cakes -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Rusks and Cakes" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Rusks & Cakes</h3>
+                        <p class="product-description">Crispy double-baked rusks and soft packaged sponge cakes—ideal for retail grocery display and everyday snacking.</p>
+                    </div>
                 </div>
-                <div>
-                    <strong>Sourcing Operations:</strong>
-                    <p>Dhaka, Bangladesh</p>
+
+                <!-- Candies & Wafers -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80" alt="Candies and Wafers" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Candies & Wafers</h3>
+                        <p class="product-description">Light, layered wafer biscuits and fruit-flavored hard candies designed for impulse retail placement and convenience store supply.</p>
+                    </div>
+                </div>
+
+                <!-- Snacks & Savouries -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=600&q=80" alt="Snacks and Savouries" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Snacks & Savouries</h3>
+                        <p class="product-description">Flavorful crunchy snacks and traditional savoury mixes packaged in high-barrier protective pouches to preserve full aroma and crispness.</p>
+                    </div>
+                </div>
+
+                <!-- Spices & Recipe Mixes -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Spices and Recipe Mixes" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Spices & Recipe Mixes</h3>
+                        <p class="product-description">Essential ground spices and authentic recipe blends formulated to deliver consistent, traditional flavor for household and commercial cooking.</p>
+                    </div>
+                </div>
+
+                <!-- Aromatic Rice -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Aromatic Rice" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Aromatic Rice</h3>
+                        <p class="product-description">Premium aged long-grain rice selected for its distinct natural fragrance, fluffy texture, and long-grain elongation after cooking.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Full Name / Business Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g. Acme Food Market">
-                </div>
-                <div class="form-group">
-                    <label for="email">Work Email</label>
-                    <input type="email" id="email" name="email" required placeholder="name@company.com">
-                </div>
-                <div class="form-group">
-                    <label for="type">Inquiry Type</label>
-                    <select id="type" name="type">
-                        <option>Wholesale Ordering</option>
-                        <option>Customs & Sourcing Inquiry</option>
-                        <option>Supplier Partnership (BD)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message / Product Request</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Let us know what products or quantities you are looking for..."></textarea>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
-            </form>
-        </div>
-    </section>
+        <!-- APPAREL CATEGORY SECTION -->
+        <section id="apparel">
+            <div class="section-header">
+                <h2 class="section-title">Apparel Division</h2>
+                <span class="section-subtitle">Textiles & Garments</span>
+            </div>
 
-    <!-- Footer -->
+            <div class="product-grid">
+                <!-- T-Shirts -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Wholesale T-Shirts" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">T-Shirts</h3>
+                        <p class="product-description">Premium cotton and blended fabric t-shirts crafted for durability, comfort, and everyday wear. Ideal for wholesale supply, retail distribution, or custom garment printing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US SECTION -->
+        <section id="about">
+            <div class="section-header">
+                <h2 class="section-title">About Nazra</h2>
+                <span class="section-subtitle">Bridging Imports & Canadian Markets</span>
+            </div>
+
+            <div class="about-container">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At <strong>Nazra</strong>, we specialize in bringing essential, high-quality goods directly to Canada. Our goal is simple: to connect Canadian businesses, retailers, and communities with top-tier dry foods and everyday apparel sourced through reliable global manufacturing networks.</p>
+                    <p>We serve as a streamlined distribution bridge, ensuring that every product entering our supply chain meets high standards of quality, freshness, and craftsmanship.</p>
+                </div>
+
+                <div class="about-text">
+                    <h3>What We Do</h3>
+                    <ul class="about-list">
+                        <li><strong>Food Distribution:</strong> Importing dry foods, tea-time bakery favorites, spices, and premium rice for Canadian retail shelves.</li>
+                        <li><strong>Apparel Supply:</strong> Sourcing durable, high-quality everyday garments and textiles tailored for commercial distribution.</li>
+                        <li><strong>Reliable Logistics:</strong> Managing the import and distribution flow to make wholesale sourcing effortless for our Canadian partners.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <span class="section-subtitle">B2B & Wholesale Inquiries</span>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="email-direct">
+                    <span>Direct Email Inquiries</span>
+                    <a href="mailto:nazracanada@gmail.com">nazracanada@gmail.com</a>
+                </div>
+
+                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you. Your inquiry has been sent.');">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Product Interest</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="food" checked> Food Division
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="apparel"> Apparel Division
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="general"> General Inquiry
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">NAZRA GLOBAL</h4>
-                <p style="color: var(--gray); font-size: 0.9rem;">Connecting authentic Bangladeshi food products with North American consumers and businesses through safe, certified global trade.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Quick Links</h4>
-                <p><a href="#about" style="color: var(--gray); text-decoration: none;">About Us</a></p>
-                <p><a href="#products" style="color: var(--gray); text-decoration: none;">Products</a></p>
-                <p><a href="#contact" style="color: var(--gray); text-decoration: none;">Contact</a></p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1rem;">Domain</h4>
-                <p style="color: var(--gray);">www.nazraglobal.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Nazra Global. All Rights Reserved.
-        </div>
+        <p>&copy; Nazra Global. Food • Apparel • Distribution. All rights reserved.</p>
     </footer>
 
 </body>
